@@ -204,7 +204,6 @@ footer {
   align-items: center;
   margin-top: 20px;
   position:block;
-
   }
 
 .text-center{
@@ -228,5 +227,7 @@ padding-top:1px;}
     .nav {padding: 1px; font-size: 8px;}
 .nav-item{padding-left: 1px;
       padding-right: 1px; }
+
 }
+
 
