@@ -1,0 +1,87 @@
+
+
+$colors: (
+    blue: #3935ff,
+    dark: #424242,
+    white: #ffffff,
+);
+
+@mixin BackgroundYColor($colorBG, $colorTxt) {
+    background-color: $colorBG;
+    color: $colorTxt;
+}
+
+@mixin fonts {
+    font-family: Monserrat;
+}
+
+
+@each $nombre, $color in $colors {
+    $text: #fff;
+    .page-footer#{$nombre} {
+        $padding: 20px;
+        padding: $padding;
+          margin-top: 20px;
+        text-transform: transparent;
+        line-height: 1;
+        @if $nombre == blue {
+            $text: #000;
+        }
+        @include BackgroundYColor($color, $text);
+
+        &:hover {
+            background-color: ($color, 30%);
+        }
+    }
+    .text-#{$nombre} {
+        color: $color;
+    }
+}
+
+body {
+    color: white;
+    margin: 0;
+    padding: 1rem;
+    @include fonts;
+}
+
+header {
+    position: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: blue;
+    color: white;
+    nav {
+        display: flex;
+
+        padding: 5px 8px;
+        a {
+            padding: .5rem;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: blue;
+            &:hover {
+                background-color: darken(#fff, 20%);
+            }
+
+            + a {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+footer {
+    position: block;}
+
+@mixin sizes($width, $height) {
+   height: $height;
+   width: $width;
+}
+.box {
+   @include sizes(100%, 800px);
+}
+
+   
